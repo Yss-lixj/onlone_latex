@@ -1,4 +1,4 @@
-package com.diego.spring.boot.web;
+package com.yss.latex;
 
 
 import org.springframework.boot.SpringApplication;

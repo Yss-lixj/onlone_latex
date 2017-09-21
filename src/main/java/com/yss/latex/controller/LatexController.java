@@ -1,4 +1,4 @@
-package com.diego.spring.boot.web.controller;
+package com.yss.latex.controller;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.scilab.forge.jlatexmath.TeXConstants;

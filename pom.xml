@@ -9,8 +9,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.diego.spring.boot.web</groupId>
-	<artifactId>spring-boot-web</artifactId>
-	<packaging>war</packaging>
+	<artifactId>online-latex</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -50,7 +50,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<mainClass>com.diego.spring.boot.web.MainApplication</mainClass>
+					<mainClass>com.yss.latex.MainApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>
