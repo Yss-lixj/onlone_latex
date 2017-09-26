@@ -56,25 +56,28 @@
 
     </style>
     <script type="text/javascript">
-//        $(document).ready(function(){
-//            $('.panel').mouseover(function () {
-//                $(this).css("overflow","visible")
-//                $(this).css("z-index",100)
-//                $(this).parent().css("z-index",100)
-//                console.log("mouserover")
-//            });
-//
-//            $('.panel').mouseout(function () {
-//                $(this).css("overflow","hidden")
-//                $(this).css("z-index", -1)
-//                $(this).parent().css("z-index",-1)
-//                console.log("mouseout")
-//            });
-//        });
+        $(document).ready(function(){
+            $('.panel').mouseover(function () {
+                $('#hover').css('display','block')
+                        .css('top','100px')
+                        .css('left','100px')
+                console.log("mouserover")
+            });
+
+            $('.panel').mouseout(function () {
+                $('#hover').css('display','none')
+                console.log("mouseout")
+            });
+        });
     </script>
 </head>
 <body>
 <div id="warp" style="margin-left: 170px">
+
+    <div id="hover" style="left: 454px; top: 165px; display: none; position: absolute; z-index: 200;">
+        <img src="http://latex.codecogs.com/gif.latex?\200dpi _a^{b}\textrm{C}">
+    </div>
+
     <div id="bar1">
         <div class="toolbar_wrapper" >
             <div class="toolbar">
@@ -123,7 +126,7 @@
                               onclick="EqEditor.insert('\\!')">
                     </map>
                 </div>
-                <div class="panel" id="panel4">
+                <div class="panel" id="panel4" style="height: 34px">
                     <img src="./images/binary.gif" width="68" height="238" border="0" title="Binary" alt="Binary Panel"
                          usemap="#binary_map">
                     <map name="binary_map" id="binary_map">
@@ -182,7 +185,7 @@
                         <area shape="rect" alt="" coords="51,170,65,184" title="\bigodot">
                     </map>
                 </div>
-                <div class="panel" id="panel16">
+                <div class="panel" id="panel16" style="height: 34px">
                     <img src="./images/symbols.gif" width="68" height="136" border="0" title="Symbols" alt="Symbols Panel"
                          usemap="#symbols_map">
                     <map name="symbols_map" id="symbols_map">
@@ -218,7 +221,7 @@
                         <area shape="rect" alt="" coords="51,102,65,116" title="\wp">
                     </map>
                 </div>
-                <div class="panel" id="panel6">
+                <div class="panel" id="panel6" style="height: 34px">
                     <img src="./images/foreign.gif" width="34" height="136" border="0" title="Foreign" alt="Foreign Panel"
                          usemap="#foreign_map">
                     <map name="foreign_map" id="foreign_map">
@@ -263,7 +266,7 @@
                         <area shape="rect" alt="" coords="17,119,31,133" title="\ni">
                     </map>
                 </div>
-                <div class="panel" id="panel1">
+                <div class="panel" id="panel1" style="height: 34px;">
                     <img src="./images/accents.gif" width="34" height="119" border="0" title="Accents" alt="Accents Panel"
                          usemap="#accents_map">
                     <map name="accents_map" id="accents_map">
@@ -290,7 +293,7 @@
                               onclick="EqEditor.insert('^{\\circ}',0)">
                     </map>
                 </div>
-                <div class="panel" id="panel2">
+                <div class="panel" id="panel2" style="height: 34px">
                     <img src="./images/accents_ext.gif" width="25" height="170" border="0" title="Accents_ext"
                          alt="Accents_ext Panel" usemap="#accents_ext_map">
                     <map name="accents_ext_map" id="accents_ext_map">

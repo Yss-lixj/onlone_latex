@@ -7,6 +7,7 @@ body {
     font: 12px "宋体", "Arial Narrow", HELVETICA;
     background: #fff;
     -webkit-text-size-adjust: 100%;
+    text-align: center;
 }
 
 a {
@@ -39,4 +40,14 @@ table {
 
 p {
     word-wrap: break-word
+}
+
+
+
+.clear{
+    clear:both;
+    height:1px;
+    width:100%;
+    overflow:hidden;
+    margin-top:-1px;
 }

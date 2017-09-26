@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>程序猿的导航站</title>
+    <link rel="stylesheet" href="./css/cssinit.css">
+    <script src="./js/lib/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").attr("target","_blank");
+
+
+            $(".search-hd li").click(function () {
+                $(".on").removeClass("on");
+                $(this).addClass("on")
+                $("form:hidden").remove()
+
+                switch($(this).text()){
+                    case "网页":
+                        $("form").attr("action", "https://www.baidu.com/s")
+                        break
+                    case "新闻":
+                        $("form").attr("action", "http://news.baidu.com/ns")
+                        break;
+                    case "视频":
+                        $("form").attr("action", "http://video.baidu.com/v")
+                        break;
+                    case "图片":
+                        $("form").attr("action", "http://image.baidu.com/search/index")
+                        $("form").append('<input type="hidden" name="tn" value="baiduimage">')
+                        break;
+                    case "微信":
+                        $("form").attr("action", "http://weixin.sogou.com/weixin")
+                        $("form").append('<input type="hidden" name="type" value="2">')
+                        break;
+                }
+
+                if($(this).text()=="微信"){
+                    $(".search-input").attr("name", "query")
+                    $(".logo").css("background","url(./images/sousuo_pad.png)")
+                            .css("background-size","150px 58px")
+                    $(".button").attr("value","搜狗")
+
+                }else {
+                    $(".search-input").attr("name", "word")
+                    $(".logo").css("background","url(./images/bd_logo1_31bdc765.png)")
+                            .css("background-size","150px 58px")
+                    $(".button").attr("value","百度")
+                }
+
+            });
+
+
+
+
+        });
+    </script>
+
+    <style>
+
+        .container {
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+            max-width: 1000px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .search {
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .search-hd li {
+            display: inline;
+            margin-right: 12px;
+            height: 32px;
+            line-height: 32px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        .on {
+            background-color: #3EAF0E;
+        }
+
+        .logo {
+            width: 150px;
+            height: 58px;
+            display: inline-block;
+            vertical-align: bottom;
+            background: url(./images/bd_logo1_31bdc765.png) no-repeat 0 0;
+            background-size: 150px 58px;
+        }
+
+        .log span {
+            width: 128px;
+            height: 40px;
+            display: block;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        .search-input {
+            width: 448px;
+            height: 18px;
+            padding: 10px 0;
+            /*border: 0;*/
+            /*margin: 3px 30px 0 60px;*/
+            _margin-top: 2px;
+            font: 16px arial;
+        }
+
+        .button {
+            width: 118px;
+            height: 44px;
+            border: 0;
+            font-family: arial;
+            font-size: 16px;
+            color: #fff;
+            background: #3385ff;
+            cursor: pointer;
+        }
+
+        .search-body {
+            vertical-align: bottom;
+            padding: 5px;
+        }
+
+        .s-br21 {
+            border: 1px solid #adb;
+            width: 900px;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+
+        .s-br21 li {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        .site-item {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 139px;
+            height: 20px;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 6px 0px 4px;
+            /*border: 1px solid blue;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="search">
+        <div class="search-hd">
+            <ul>
+                <li class="on">网页</li>
+                <li>新闻</li>
+                <li>视频</li>
+                <li>图片</li>
+                <li>视频</li>
+                <li>微信</li>
+            </ul>
+        </div>
+        <div class="search-body">
+            <div class="logo">
+                <a href="https://www.baidu.com"><span class="color s-wea"></span></a>
+            </div>
+            <form action="https://www.baidu.com/s" target="_blank">
+                <input type="text" name="word" class="search-input" placeholder="">
+                <input type="submit" class="button" value="百度">
+            </form>
+        </div>
+    </div>
+    <div class="s-br21">
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a class="" href="http://www.baidu.com/">百度</a>•
+                <a href="http://cn.bing.com/" target="_blank">必应</a>•
+                <a href="https://www.sogou.com/" target="_blank">搜狗</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.sina.com.cn/">新浪</a>•
+                <a href="https://weibo.com/">微博</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.sohu.com/">搜狐</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.qq.com/">腾讯</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.163.com/">网易</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.youku.com/">优酷</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.ifeng.com/">凤凰网</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.iqiyi.com/">爱奇艺</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.ctrip.com/">携程</a>
+            </li>
+            <li class="site-item">
+                <a href="http://58.com/">58同城</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.taobao.com/">淘宝网</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.lagou.com/">拉勾网</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.jd.com/">京东</a>
+            </li>
+            <li class="site-item">
+                <a href="https://v.qq.com/">腾讯视频</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.suning.com/">苏宁易购</a>
+            </li>
+            <li class="site-item">
+                <a href="https://github.com/">github</a>
+            </li>
+            <li class="site-item">
+                <a href="http://mail.163.com/">163邮箱</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.amazon.cn/">亚马逊</a>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="s-br21">
+        <div style="text-align: left">前端</div>
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a href="http://www.w3school.com.cn/html/index.asp">HTML教程</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.w3school.com.cn/css/index.asp">CSS教程</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.w3school.com.cn/b.asp">js教程</a>
+            </li>
+            <li class="site-item">
+                <a href="http://jquery.cuishifeng.cn/index.html">jquery</a>
+            </li>
+            <li class="site-item">
+                <a href="https://cn.vuejs.org/">vue.js</a>
+            </li>
+            <li class="site-item">
+                <a href="https://facebook.github.io/react/">react.js</a>
+            </li>
+        </ul>
+    </div>
+    <div class="s-br21">
+        <div style="text-align: left">后端</div>
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a href="http://www.redis.net.cn/order/">RedisAPI</a>
+            </li>
+            <li class="site-item">
+                <a href="http://tool.oschina.net/apidocs/apidoc?api=mysql-5.1-zh">Mysql文档</a>
+            </li>
+            <li class="site-item">
+                <a href="http://man.linuxde.net/">Shell手册</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.docker.com/">docker</a>
+            </li>
+            <li class="site-item">
+                <a href="https://stackoverflow.com/">StackOverFlow</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.oracle.com/technetwork/cn/java/javase/documentation/api-jsp-136079-zhs.html">JDK文档</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="s-br21">
+        <div style="text-align: left">工具</div>
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a href="">json美化</a>
+            </li>
+            <li class="site-item">
+                <a href="">时间戳</a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+        </ul>
+    </div>
+    <div class="s-br21">
+        <div style="text-align: left">软件下载</div>
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a href="http://hadoop.apache.org/releases.html">hadoop</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.mysql.com/downloads/">mysql</a>
+            </li>
+            <li class="site-item">
+                <a href="http://maven.apache.org/download.cgi">maven</a>
+            </li>
+            <li class="site-item">
+                <a href="http://tomcat.apache.org/">tomcat</a>
+            </li>
+            <li class="site-item">
+                <a href="http://spark.apache.org/downloads.html">spark</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">java</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.jetbrains.com/idea/download/">Intellij IDEA</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.eclipse.org/downloads/download.php">ecplise</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.python.org/downloads/">python</a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+            <li class="site-item">
+                <a href=""></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="s-br21">
+        <div style="text-align: left">在线教育</div>
+        <ul class="js_bd site-bd site-hd0">
+            <li class="site-item">
+                <a href="http://study.163.com/">网易云课堂</a>
+            </li>
+            <li class="site-item">
+                <a href="https://www.shiyanlou.com/">实验楼</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.imooc.com/">慕课网</a>
+            </li>
+            <li class="site-item">
+                <a href="http://edu.51cto.com/">51CTO</a>
+            </li>
+            <li class="site-item">
+                <a href="http://www.icourse163.org/">中国大学MOOC</a>
+            </li>
+            <li class="site-item">
+                <a href="http://mooc.guokr.com/">MOOC学院</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+</body>
+</html>
